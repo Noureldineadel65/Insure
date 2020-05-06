@@ -172,7 +172,14 @@ button::-moz-focus-inner {
 		right: 0;
 		width: 35rem;
 	}
-	.intro-left img {
+	.intro-left {
+		position: absolute;
+		z-index: 0;
+		bottom: -15rem;
+		left: 0;
+		width: 13rem;
+	}
+	img {
 		// max-width: 45rem;
 		// z-index: -1;
 		max-width: 100%;
@@ -247,7 +254,9 @@ button::-moz-focus-inner {
 	padding-top: 15rem;
 }
 .find {
-	background-color: $primary-color;
+	background: $primary-color
+		url(../../images/bg-pattern-how-we-work-desktop.svg);
+
 	color: $light-grey;
 	margin: 10rem 0;
 	font-size: 2.5rem;
@@ -257,7 +266,8 @@ button::-moz-focus-inner {
 	}
 }
 .footer {
-	background-color: $light-grey;
+	background: $light-grey url(../../images/bg-pattern-footer-desktop.svg)
+		no-repeat;
 	padding: 5rem 0;
 	&__icons {
 		display: flex;
@@ -320,6 +330,12 @@ button::-moz-focus-inner {
 	}
 }
 // 850
+a {
+	transition: all 0.3s;
+	&:hover {
+		color: lighten($color: $primary-color, $amount: 50%);
+	}
+}
 @media only screen and (max-width: 1200px) {
 	.header {
 		padding-top: 10rem;
@@ -371,6 +387,14 @@ button::-moz-focus-inner {
 			display: none;
 		}
 	}
+	.header {
+		.col:first-of-type {
+			order: 2;
+		}
+		.col:last-of-type {
+			order: 1;
+		}
+	}
 	.about h1 {
 		&::before {
 			left: 50%;
@@ -401,5 +425,9 @@ button::-moz-focus-inner {
 	}
 	.nav__list {
 		display: none;
+	}
+	.footer {
+		background: $light-grey url(../../images/bg-pattern-footer-mobile.svg)
+			no-repeat;
 	}
 }
